@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Воскресенье, 11 октября · Русский язык, 7 класс</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1a2332;padding:28px 16px 60px;line-height:1.55}
+.page{max-width:860px;margin:0 auto}
+.header{text-align:center;margin-bottom:18px}
+.badge{display:inline-block;background:#0f4c81;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:12px}
+h1{font-size:25px;font-weight:800;color:#0d1b2a;margin-bottom:6px}
+.header p{font-size:14px;color:#5a6a7e}
+.nav{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px;position:sticky;top:0;background:#f0f4f8;padding:8px 0;z-index:5}
+.nav a{padding:6px 12px;border-radius:8px;border:2px solid #dde3eb;background:#fff;font-size:12.5px;font-weight:600;color:#4b5563;text-decoration:none}
+.nav a:hover{border-color:#0f4c81;color:#0f4c81}
+.card{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:18px 20px;margin-bottom:14px;scroll-margin-top:60px}
+.card h2{font-size:17px;color:#0d1b2a;margin-bottom:4px;display:flex;gap:10px;align-items:center}
+.num{background:#0f4c81;color:#fff;border-radius:50%;width:26px;height:26px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.sub{font-size:12.5px;color:#64748b;margin:2px 0 10px}
+p{font-size:14.5px;margin-bottom:9px}
+.rule{background:#e8f1fb;border-left:4px solid #0f4c81;border-radius:0 10px 10px 0;padding:10px 14px;font-size:14px;margin:8px 0;color:#0c3a63}
+.warn{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:10px;padding:9px 13px;font-size:13.5px;color:#78350f;margin:8px 0}
+.ok{background:#ecfdf5;border-left:4px solid #10b981;border-radius:0 10px 10px 0;padding:9px 14px;font-size:13.5px;color:#065f46;margin:8px 0}
+.wrap{overflow-x:auto;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:13.5px}
+th{background:#0f4c81;color:#fff;text-align:left;padding:8px 11px;font-size:12px}
+td{padding:8px 11px;border-bottom:1px solid #e8edf4;vertical-align:top}
+tr:nth-child(even) td{background:#f8fafc}
+table.blank td{height:34px;border:1px solid #cbd5e1;background:#fff!important}
+button{font-family:inherit}
+.btn{padding:8px 16px;border-radius:8px;border:2px solid #0f4c81;background:#fff;color:#0f4c81;font:600 13px inherit;font-family:inherit;cursor:pointer;margin:6px 6px 0 0}
+.btn:hover{background:#0f4c81;color:#fff}
+button:focus-visible{outline:3px solid #0f4c81;outline-offset:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0}
+.fc{border:2px solid #dde3eb;border-radius:12px;padding:10px;background:#fff;text-align:center;min-height:96px}
+.fc .w{font-size:20px;font-weight:800;color:#0d1b2a;margin-bottom:6px}
+.fc .a{display:none;font-size:13px;color:#065f46}
+.fc.show .a{display:block}
+.fc.err{border-color:#f87171;background:#fef2f2}
+.fc button{border:0;background:#f1f5f9;border-radius:8px;padding:4px 10px;font-size:12px;font-weight:600;cursor:pointer;color:#374151;margin-top:5px}
+.fc.show .reveal{display:none}
+.fc .reveal{background:#0f4c81;color:#fff}
+.steps4{counter-reset:s;list-style:none}
+.steps4 li{display:none;margin-bottom:9px;padding:10px 14px;background:#e8f1fb;border-left:4px solid #0f4c81;border-radius:0 10px 10px 0;font-size:14.5px}
+.steps4 li.on{display:block}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;color:#475569;margin-top:12px;cursor:pointer}
+.chk input{width:18px;height:18px}
+.card.done{border-color:#34d399;background:#f6fffa}
+.qz .q{padding:11px 0;border-top:1px solid #f1f5f9}
+.qz .q:first-of-type{border-top:0}
+.qz .t{font-size:14.5px;font-weight:600;margin-bottom:8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{padding:7px 14px;border-radius:9px;border:2px solid #dde3eb;background:#fff;font:600 13.5px inherit;font-family:inherit;color:#374151;cursor:pointer}
+.opt:hover:not(:disabled){border-color:#0f4c81}
+.opt.good{background:#d1fae5;border-color:#34d399;color:#065f46}
+.opt.bad{background:#fee2e2;border-color:#f87171;color:#991b1b}
+.fb{font-size:13px;color:#0c4a6e;margin-top:6px}
+.score{font-weight:800;color:#0f4c81;font-size:15px;margin-top:10px}
+.key{display:none}.key.on{display:block}
+.dict p{margin-bottom:6px}
+@media print{.nav,.btn,.chk,.reveal,.fc button{display:none!important}body{background:#fff;padding:0}.card{break-inside:avoid}.steps4 li{display:block}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="header"><div class="badge">Русский язык · 7 класс</div>
+<h1>Воскресенье, 11 октября</h1>
+<p>Закрепляем НЕ и собираем карту частей речи. Всё по порядку, как в плане.</p></div>
+
+<div class="nav">
+<a href="#s1">1 Разминка</a><a href="#s2">2 Карта</a><a href="#s3">3 Десять слов</a><a href="#s4">4 Алгоритм НЕ</a><a href="#s5">5 Практика</a><a href="#s6">6 Диктант</a><a href="#s7">7 Итог и ДЗ</a>
+</div>
+
+<div class="card" id="s1"><h2><span class="num">1</span>Разминка без подсказок</h2>
+<div class="sub">Ученица пишет все части речи, которые помнит, и по одному примеру. Ничего не поправляйте, лист сохраните.</div>
+<div class="wrap"><table class="blank"><tr><th style="width:50%">Часть речи</th><th>Пример</th></tr>
+<tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></table></div>
+<div class="warn">Это диагностика. Отметьте, каких частей речи не хватает: это и есть то, что нужно подтянуть.</div>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card" id="s2"><h2><span class="num">2</span>Карта частей речи</h2>
+<div class="sub">Разберите таблицу, потом ученица придумывает свой пример к каждой строке (пустой столбец).</div>
+<div class="wrap"><table><tr><th>Часть речи</th><th>Вопросы</th><th>Что обозначает</th><th>Пример</th><th>Свой пример</th></tr>
+<tr><td><b>Существительное</b></td><td>кто? что?</td><td>предмет</td><td>дом, радость</td><td></td></tr>
+<tr><td><b>Прилагательное</b></td><td>какой? чей?</td><td>признак предмета</td><td>красивый</td><td></td></tr>
+<tr><td><b>Числительное</b></td><td>сколько? который по счёту?</td><td>число, счёт</td><td>пять, пятый</td><td></td></tr>
+<tr><td><b>Местоимение</b></td><td>указывает, не называет</td><td>замена имени</td><td>я, он, этот</td><td></td></tr>
+<tr><td><b>Глагол</b></td><td>что делать? что сделать?</td><td>действие</td><td>читать</td><td></td></tr>
+<tr><td><b>Причастие</b></td><td>какой? что делающий?</td><td>признак по действию</td><td>читающий</td><td></td></tr>
+<tr><td><b>Деепричастие</b></td><td>что делая? что сделав?</td><td>добавочное действие</td><td>читая</td><td></td></tr>
+<tr><td><b>Наречие</b></td><td>как? где? когда?</td><td>признак действия</td><td>быстро</td><td></td></tr>
+<tr><td><b>Предлог</b></td><td>вопроса нет</td><td>связывает слова</td><td>в, на</td><td></td></tr>
+<tr><td><b>Союз</b></td><td>вопроса нет</td><td>связывает слова и части предложения</td><td>и, а, но</td><td></td></tr>
+<tr><td><b>Частица</b></td><td>вопроса нет</td><td>оттенок, отрицание</td><td>не, ни, бы</td><td></td></tr>
+<tr><td><b>Междометие</b></td><td>вопроса нет</td><td>выражает чувства</td><td>ах, ой</td><td></td></tr></table></div>
+<div class="ok">Самостоятельные части речи имеют вопрос. Служебные (предлог, союз, частица) вопроса не имеют. Междометие стоит отдельно.</div>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card" id="s3"><h2><span class="num">3</span>Десять слов, один вопрос</h2>
+<div class="sub">Устно. Ученица задаёт вопрос и называет часть речи, потом нажмите «Ответ». Если ошиблась, нажмите «Ошибка»: она запишется ниже.</div>
+<div class="cards" id="fcs"></div>
+<p><b>Ошибки:</b> <span id="errs">нет</span></p>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card" id="s4"><h2><span class="num">4</span>Алгоритм НЕ</h2>
+<div class="sub">Ученица рассказывает четыре шага без подсказок. Если запнулась, подсказывайте вопросом. Шаги открываются по одному.</div>
+<ol class="steps4" id="alg">
+<li>1) Слова без НЕ нет (ненавидеть, неряха): <b>слитно</b>.</li>
+<li>2) Есть «а» или слова совсем, вовсе, отнюдь, далеко не: <b>раздельно</b>.</li>
+<li>3) Глагол, деепричастие, краткое причастие: <b>раздельно</b>.</li>
+<li>4) Можно заменить синонимом без НЕ (невысокий = низкий): <b>слитно</b>.</li></ol>
+<button class="btn" id="algb">Показать шаг</button><button class="btn" id="algr">Скрыть всё</button>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card qz" id="s5"><h2><span class="num">5</span>Практика. Блок А: определи часть речи</h2>
+<div class="sub">Ученица отвечает сама. После ответа прочитайте объяснение вслух.</div><div id="qa"></div><div class="score" id="sa"></div></div>
+<div class="card qz"><h2><span class="num">5</span>Практика. Блок Б: НЕ с разными частями речи</h2>
+<div class="sub">Слитно или раздельно? В объяснении назван шаг алгоритма.</div><div id="qb"></div><div class="score" id="sb"></div>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card dict" id="s6"><h2><span class="num">6</span>Диктант на НЕ</h2>
+<div class="sub">Диктуйте по одному предложению. Проверьте вместе и у каждой ошибки назовите часть речи слова.</div>
+<p>1. Он не знал ответа, но не растерялся.<br>2. Это была далеко не лёгкая задача.<br>3. Несмотря на дождь, мы пошли гулять.<br>4. Не глядя по сторонам, он перешёл дорогу.<br>5. Дверь не закрыта на ключ.<br>6. Он сказал неправду.<br>7. Это не друг, а враг.<br>8. Невысокий мальчик стоял у окна.</p>
+<button class="btn" id="keyb">Показать ключ для проверки</button>
+<div class="key" id="key"><div class="wrap"><table><tr><th>№</th><th>Слово</th><th>Часть речи</th><th>Почему</th></tr>
+<tr><td>1</td><td>не знал, не растерялся</td><td>глагол</td><td>глагол: раздельно</td></tr>
+<tr><td>2</td><td>далеко не лёгкая</td><td>прилагательное</td><td>«далеко не»: раздельно</td></tr>
+<tr><td>3</td><td>несмотря на</td><td>предлог</td><td>производный предлог: слитно</td></tr>
+<tr><td>4</td><td>не глядя</td><td>деепричастие</td><td>раздельно</td></tr>
+<tr><td>5</td><td>не закрыта</td><td>краткое причастие</td><td>раздельно</td></tr>
+<tr><td>6</td><td>неправду</td><td>существительное</td><td>нет «а», без НЕ не употребляется: слитно</td></tr>
+<tr><td>7</td><td>не друг, а враг</td><td>существительное</td><td>есть «а»: раздельно</td></tr>
+<tr><td>8</td><td>невысокий</td><td>прилагательное</td><td>= низкий: слитно</td></tr></table></div></div>
+<label class="chk"><input type="checkbox"> Шаг выполнен</label></div>
+
+<div class="card" id="s7"><h2><span class="num">7</span>Итог и домашнее задание</h2>
+<p><b>Ученица отвечает:</b> что сегодня получилось лучше всего? Что ещё путаю?</p>
+<div class="rule"><b>Домашнее задание.</b> Выписать из любого учебного текста десять слов с НЕ, определить у каждого часть речи и написать слитно или раздельно. Выучить таблицу «Карта частей речи».</div>
+<div class="wrap"><table class="blank"><tr><th>Слово с НЕ</th><th>Часть речи</th><th>Слитно / раздельно</th></tr>
+<tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table></div>
+<div class="ok"><b>Контроль в субботу.</b> Начните с пяти слов: ученица называет часть речи и вопрос.</div>
+<button class="btn" onclick="window.print()">Распечатать</button></div>
+</div>
+
+<script>
+function $(i){return document.getElementById(i)}
+var WD=[["книга","что? — существительное"],["красивый","какой? — прилагательное"],["читать","что делать? — глагол"],["читающий","какой? что делающий? — причастие"],["прочитав","что сделав? — деепричастие"],["быстро","как? — наречие"],["три","сколько? — числительное"],["он","указывает, не называет — местоимение"],["на","вопроса нет — предлог"],["и","вопроса нет — союз"],["не","вопроса нет — частица"],["ах","вопроса нет — междометие"]];
+var fcs=$("fcs"),errs={};
+fcs.innerHTML=WD.map(function(w,i){return'<div class="fc" data-i="'+i+'"><div class="w">'+w[0]+'</div><div class="a">'+w[1]+'</div><button class="reveal">Ответ</button><button class="er">Ошибка</button></div>'}).join("");
+fcs.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var c=b.parentNode,i=c.dataset.i;
+if(b.classList.contains("reveal"))c.classList.add("show");
+else{c.classList.toggle("err");if(c.classList.contains("err"))errs[i]=1;else delete errs[i];
+var l=Object.keys(errs).sort(function(a,b){return a-b}).map(function(k){return WD[k][0]});$("errs").textContent=l.length?l.join(", "):"нет"}});
+var al=$("alg").children,n=0;
+$("algb").onclick=function(){if(n<al.length){al[n].classList.add("on");n++}};
+$("algr").onclick=function(){for(var i=0;i<al.length;i++)al[i].classList.remove("on");n=0};
+$("keyb").onclick=function(){var k=$("key");k.classList.toggle("on");this.textContent=k.classList.contains("on")?"Скрыть ключ":"Показать ключ для проверки"};
+document.querySelectorAll(".chk input").forEach(function(c){c.onchange=function(){c.closest(".card").classList.toggle("done",c.checked)}});
+
+function quiz(boxId,scoreId,list){
+var done=0,ok=0,box=$(boxId),s="";
+list.forEach(function(q,i){
+s+='<div class="q"><div class="t">'+(i+1)+'. '+q[0]+'</div><div class="opts">'+q[1].map(function(o,j){return'<button class="opt" data-i="'+i+'" data-j="'+j+'">'+o+'</button>'}).join("")+'</div><div class="fb" id="'+boxId+'f'+i+'"></div></div>'});
+box.innerHTML=s;
+box.addEventListener("click",function(e){var b=e.target.closest(".opt");if(!b||b.disabled)return;
+var i=+b.dataset.i,j=+b.dataset.j,q=list[i],good=j===q[2];
+box.querySelectorAll('[data-i="'+i+'"]').forEach(function(x){x.disabled=true;if(+x.dataset.j===q[2])x.classList.add("good")});
+if(!good)b.classList.add("bad");
+$(boxId+"f"+i).textContent=(good?"Верно. ":"Неверно. ")+q[3];
+done++;if(good)ok++;
+if(done===list.length)$(scoreId).textContent="Результат: "+ok+" из "+list.length})}
+var PS=["существительное","прилагательное","глагол","причастие","деепричастие","наречие"];
+function A(pre,w,post,ans,exp){return[pre+"<u>"+w+"</u>"+post+" Слово «"+w+"» — это...",PS,PS.indexOf(ans),exp]}
+quiz("qa","sa",[
+A("","Читающий"," мальчик сидел у окна.","причастие","Какой? Читающий. Образовано от глагола «читать», суффикс -ющ-: причастие."),
+A("Он сидел, ","читая"," книгу.","деепричастие","Что делая? Читая. Не изменяется: деепричастие."),
+A("Он ","читает"," книгу.","глагол","Что делает? Читает. Это основное действие: глагол."),
+A("Он ","быстро"," бежит.","наречие","Как бежит? Быстро. Вопрос «как?»: наречие."),
+A("","Прочитанная"," книга лежала на столе.","причастие","Какая? Прочитанная. Суффикс -нн-, образовано от глагола: причастие."),
+A("","Прочитав"," письмо, она улыбнулась.","деепричастие","Что сделав? Прочитав. Суффикс -в: деепричастие."),
+A("","Красивый"," дом стоял на холме.","прилагательное","Какой? Красивый. Не образовано от глагола: прилагательное."),
+A("В ","окне"," горел свет.","существительное","В чём? В окне. Вопрос «что?»: существительное."),
+A("Она вошла, ","улыбаясь",".","деепричастие","Что делая? Улыбаясь. Суффикс -я(сь): деепричастие."),
+A("","Спящий"," кот лежал на диване.","причастие","Какой? Спящий. Образовано от «спать», суффикс -ящ-: причастие.")
+]);
+var SR=["слитно","раздельно"];
+function B(s,a,e){return[s,SR,SR.indexOf(a),e]}
+quiz("qb","sb",[
+B("Мальчик (не)грустил, а радовался.","раздельно","Глагол: раздельно. Ещё есть «а»."),
+B("Это (не)весёлый, а грустный фильм.","раздельно","Прилагательное и «а»: раздельно."),
+B("Стояла (не)настная погода.","слитно","Без «не» слова «настная» нет: слитно."),
+B("(Не)решённая задача лежала на столе.","слитно","Полное причастие без зависимых слов: слитно."),
+B("Он ответил, (не)думая.","раздельно","Деепричастие: раздельно."),
+B("Он вёл себя (не)лепо.","слитно","Без «не» слова «лепо» в этом значении нет: слитно."),
+B("Задача (не)решена.","раздельно","Краткое причастие: раздельно."),
+B("Это (не)трудная, а лёгкая задача.","раздельно","Есть «а»: раздельно."),
+B("Он (не)приятель, а конкурент.","раздельно","Есть «а»: раздельно."),
+B("Дом был (не)высоким.","слитно","Нет «а», можно заменить словом «низким»: слитно.")
+]);
+</script>
+</body>
+</html>
